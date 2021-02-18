@@ -19,6 +19,9 @@
         state: started
         enabled: yes
 
+    - name: set python3.7 interpreter
+      set_fact: ansible_python_interpreter="/usr/bin/python3"
+
     - name: install db
       mysql_db:
         name: bobby
