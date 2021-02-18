@@ -1,0 +1,25 @@
+---
+- name: install mysql
+  hosts: all
+  collections:
+    - community.mysql
+
+  tasks:
+    - name: docker packages installation
+      yum:
+        name: "{{ packages }}"
+        state: present
+      vars:
+        packages:
+        - mysql-server
+
+    - name: démarrer mysql
+      systemd:
+        name: mysqld.service
+        state: started
+        enabled: yes
+
+    - name: install db
+      mysql_db:
+	name: bobby
+	state: present
