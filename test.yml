@@ -11,11 +11,11 @@
         state: present
       vars:
         packages:
-        - mysql-server
+        - mysql
 
     - name: démarrer mysql
       systemd:
-        name: mysql
+        name: mysql.service
         state: started
         enabled: yes
 
