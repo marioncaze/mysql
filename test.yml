@@ -11,11 +11,11 @@
         state: present
       vars:
         packages:
-        - mysql
+        - mariadb-server
 
     - name: démarrer mysql
       systemd:
-        name: mysql.service
+        name: mariadb.service
         state: started
         enabled: yes
 
