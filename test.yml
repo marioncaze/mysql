@@ -15,7 +15,7 @@
 
     - name: démarrer mysql
       systemd:
-        name: mysqld.service
+        name: mysql
         state: started
         enabled: yes
 
