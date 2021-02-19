@@ -1,6 +1,8 @@
 ---
 - name: install mysql
   hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   collections:
     - community.mysql
 
@@ -18,9 +20,6 @@
         name: mariadb.service
         state: started
         enabled: yes
-
-    - name: set python3.7 interpreter
-      set_fact: ansible_python_interpreter="/usr/bin/python3"
 
     - name: Install bottle python package
       ansible.builtin.pip:
