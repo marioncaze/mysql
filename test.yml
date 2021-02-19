@@ -19,12 +19,12 @@
         state: started
         enabled: yes
 
-    - name: set python3.7 interpreter
-      set_fact: ansible_python_interpreter="/usr/bin/python3"
-
-    - name: Install pymysql python package
-      ansible.builtin.pip:
-        name: pymysql
+#    - name: set python3.7 interpreter
+#      set_fact: ansible_python_interpreter="/usr/bin/python3"
+#
+#    - name: Install pymysql python package
+#      ansible.builtin.pip:
+#        name: pymysql
 
     - name: install db
       mysql_db:
