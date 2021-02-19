@@ -8,12 +8,9 @@
 
   tasks:
     - name: docker packages installation
-      yum:
-        name: "{{ packages }}"
+      ansible.builtin.dnf:
+        name: mariadb-server
         state: present
-      vars:
-        packages:
-        - mariadb-server
 
     - name: démarrer mysql
       systemd:
