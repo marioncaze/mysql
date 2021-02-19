@@ -13,7 +13,7 @@
       vars:
         pippackages:
         - pymysql
-        - python-dnf
+        - python3-dnf
 
     - name: docker packages installation
       ansible.builtin.dnf:
