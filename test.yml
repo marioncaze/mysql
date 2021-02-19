@@ -7,6 +7,14 @@
     - community.mysql
 
   tasks:
+    - name: Install python package
+      ansible.builtin.pip:
+        name: "{{ pippackages }}"
+      vars:
+        pippackages:
+        - pymysql
+        - python-dnf
+
     - name: docker packages installation
       ansible.builtin.dnf:
         name: mariadb-server
@@ -17,10 +25,6 @@
         name: mariadb.service
         state: started
         enabled: yes
-
-    - name: Install bottle python package
-      ansible.builtin.pip:
-        name: pymysql
 
     - name: install db
       mysql_db:
